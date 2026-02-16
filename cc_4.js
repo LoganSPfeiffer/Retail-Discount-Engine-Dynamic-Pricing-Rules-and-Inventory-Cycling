@@ -74,24 +74,33 @@ for (let i = 0; i < customers.length; i++) {
         let itemName = customers[i].items[j];
         let qty = customers[i].quantities[j];
 
-        // find the matching product in the products array
+        // find the matching product in the products 
         for (let product of products) {
             if (product.name === itemName) {
-            if (product.inventory >= qty) {
-             // calculate price with both discounts
-             let finalPrice = product.discountedPrice * (1 - extraDiscount);
-             let lineTotal = finalPrice * qty;
-             let cartTotal = cartTotal + lineTotal;
+                if (product.inventory >= qty) {
+                    // calculate price with both discounts
+                    let finalPrice = product.discountedPrice * (1 - extraDiscount);
+                    let lineTotal = finalPrice * qty;
+                    cartTotal = cartTotal + lineTotal;
 
-            // reduce inventory by the quantity purchased
-                 product.inventory = product.inventory - qty;
+                    // reduce inventory by the quantity purchased
+                    product.inventory = product.inventory - qty;
 
-          console.log("  " + itemName + " x" + qty + " @ $" + finalPrice.toFixed(2) + " = $" + lineTotal.toFixed(2));
-             } else {
-                console.log("  " + itemName + " - not enough in stock! (only " + product.inventory + " left)");
+                    console.log("  " + itemName + " x" + qty + " @ $" + finalPrice.toFixed(2) + " = $" + lineTotal.toFixed(2));
+                } else {
+                    console.log("  " + itemName + " - not enough in stock! (only " + product.inventory + " left)");
+                }
             }
         }
     }
 
     console.log("Cart Total: $" + cartTotal.toFixed(2));
 }
+
+// Log each key/value pair for a single product
+console.log("=== Product Details ===");
+
+for (let key in products[0]) {
+    console.log(key + ": " + products[0][key]);
+}
+
