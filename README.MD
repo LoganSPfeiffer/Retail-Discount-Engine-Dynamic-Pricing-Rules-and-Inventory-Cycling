@@ -1,0 +1,2 @@
+Retail Discount Engine 
+A JavaScript discount engine that applies category and customer type discounts, simulates checkout for 3 customers, and updates inventory. Open index.html and check the browser console to see the output.

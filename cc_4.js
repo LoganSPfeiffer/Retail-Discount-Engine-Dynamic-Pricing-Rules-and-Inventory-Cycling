@@ -52,7 +52,7 @@ for (let i = 0; i < customers.length; i++) {
     let extraDiscount = 0;
     let cartTotal = 0;
 
-    console.log("\n--- " + customers[i].name + " (" + customerType + ") ---");
+    console.log("--- " + customers[i].name + " (" + customerType + ") ---");
 
     // if chain to apply additional discount based on customer type
 
