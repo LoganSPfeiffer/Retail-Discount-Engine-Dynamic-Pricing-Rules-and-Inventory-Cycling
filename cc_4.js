@@ -104,3 +104,12 @@ for (let key in products[0]) {
     console.log(key + ": " + products[0][key]);
 }
 
+// Log all product info after inventory is updated
+console.log("=== All Products After Inventory Update ===");
+
+for (let product of products) {
+    console.log("" + product.name + ":");
+    for (let [key, value] of Object.entries(product)) {
+        console.log("  " + key + " = " + value);
+    }
+}
